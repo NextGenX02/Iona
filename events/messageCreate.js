@@ -1,5 +1,7 @@
 const { Collection, ChannelType } = require("discord.js")
-const { Prefix, owner } = require("../resources/settings.json")
+const { Prefix, Developers } = require("../resources/settings.json")
+
+const i18n = require("i18n")
 
 
 const escapeRegex = (string) => {
@@ -35,8 +37,7 @@ module.exports = {
 
 		const commandName = args.shift().toLowerCase()
 
-		if (!message.content.startsWith(matchedPrefix) || message.author.bot)
-			return
+		if (!message.content.startsWith(matchedPrefix) || message.author.bot) return
 
 		const command =
 			client.commands.get(commandName) ||
@@ -46,68 +47,40 @@ module.exports = {
 
 		if (!command) return
 
-		if (command.ownerOnly && message.author.id !== owner) {
-			return message.reply({ content: "This is a owner only command!" })
+		if (command.devOnly && message.author.id !== Developers) {
+			return message.reply({ content: i18n.__("dev_only") })
 		}
 
 
 		if (command.guildOnly && message.channel.type === ChannelType.DM) {
 			return message.reply({
-				content: "I can't execute that command inside DMs!",
+				content: i18n.__("guild_only"),
 			})
 		}
 
 		if (command.permissions && message.channel.type !== ChannelType.DM) {
 			const authorPerms = message.channel.permissionsFor(message.author)
 			if (!authorPerms || !authorPerms.has(command.permissions)) {
-				return message.reply({ content: "You can not do this!" })
+				return message.reply({ content: i18n.__("no_permissions") })
 			}
 		}
 
 		if (command.args && !args.length) {
-			let reply = `You didn't provide any arguments, ${message.author}!`
+			let reply = `${i18n.__("incomplete_args")}, ${message.author}!`
 
 			if (command.usage) {
-				reply += `\nThe proper usage would be: \`${Prefix}${command.name} ${command.usage}\``
+				reply += `\n${i18n.__("proper_usage")}: \`${Prefix}${command.name} ${command.usage}\``
 			}
 
 			return message.channel.send({ content: reply })
 		}
-
-		const { cooldowns } = client
-
-		if (!cooldowns.has(command.name)) {
-			cooldowns.set(command.name, new Collection())
-		}
-
-		const now = Date.now()
-		const timestamps = cooldowns.get(command.name)
-		const cooldownAmount = (command.cooldown || 3) * 1000
-
-		if (timestamps.has(message.author.id)) {
-			const expirationTime = timestamps.get(message.author.id) + cooldownAmount
-
-			if (now < expirationTime) {
-				const timeLeft = (expirationTime - now) / 1000
-				return message.reply({
-					content: `please wait ${timeLeft.toFixed(
-						1
-					)} more second(s) before reusing the \`${command.name}\` command.`,
-				})
-			}
-		}
-
-		timestamps.set(message.author.id, now)
-		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount)
-
-		// Rest your creativity is below.
 
 		try {
 			command.execute(message, args)
 		} catch (error) {
 			console.error(error)
 			message.reply({
-				content: "There was an error trying to execute that command!",
+				content: i18n.__("error_message"),
 			})
 		}
 	},
