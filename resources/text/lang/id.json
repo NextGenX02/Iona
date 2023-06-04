@@ -1,3 +1,11 @@
 {
-	"token_invalid": "Token tidak valid, mohon untuk melihatnya kembali di pengaturan. Butuh bantuan? chat Naiyzk#6994"
+	"token_invalid": "Token tidak valid, mohon untuk melihatnya kembali di pengaturan. Butuh bantuan? chat Naiyzk#6994",
+	"dev_only":"Perintah ini hanya dapat digunakan oleh pengembang.",
+	"guild_only":"Saya tidak bisa menjalankan perintah itu di dalam pesan pribadi.",
+	"no_permissions":"Kamu tidak memiliki akses ke perintah ini.",
+	"incomplete_args":"Argumen yang diberikan kurang",
+	"proper_usage":"Penggunaan yang tepat adalah",
+	"wait":"Silahkan tunggu",
+	"time_left":"detik sebelum menggunakan kembali",
+	"error_message":"Ada kesalahan saat mencoba menjalankan perintah itu!"
 }
