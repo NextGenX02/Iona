@@ -1,11 +1,12 @@
 {
     "Token": "00000aaaa00a000a0a00a0a00a0000a0a00a0a0",
-    "Prefix":"_",
+    "Prefix":".",
+    "Developers":"954212416072343623",
     "Status": "",
     "Presences": [
         { "type": 3, "name": "Someone who created me!" },
         { "type": 2, "name": "Hello World!" }
     ],
     "Interval": 30,
-    "Languages":"id"
+    "Language":"id"
 }
