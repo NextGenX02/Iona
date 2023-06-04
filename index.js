@@ -1,5 +1,5 @@
 const { Client, Partials, Collection, GatewayIntentBits } = require("discord.js")
-const { Token, Languages } = require("./resources/settings.json")
+const { Token, Language } = require("./resources/settings.json")
 
 const i18n = require("i18n")
 const path = require("path")
@@ -39,7 +39,7 @@ const client = new Client({
 
 i18n.configure({
     locales: ["en", "id"],
-    defaultLocale: Languages,
+    defaultLocale: Language,
     directory: path.join(__dirname, "resources/text/lang"),
 })
 
