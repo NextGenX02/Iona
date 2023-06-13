@@ -1,11 +1,37 @@
 {
-	"token_invalid": "Token tidak valid, mohon untuk melihatnya kembali di pengaturan. Butuh bantuan? chat Naiyzk#6994",
-	"dev_only":"Perintah ini hanya dapat digunakan oleh pengembang.",
-	"guild_only":"Saya tidak bisa menjalankan perintah itu di dalam pesan pribadi.",
-	"no_permissions":"Kamu tidak memiliki akses ke perintah ini.",
-	"incomplete_args":"Argumen yang diberikan kurang",
-	"proper_usage":"Penggunaan yang tepat adalah",
-	"wait":"Silahkan tunggu",
-	"time_left":"detik sebelum menggunakan kembali",
-	"error_message":"Ada kesalahan saat mencoba menjalankan perintah itu!"
+	"commands": {
+		"developer": {
+			"reload": {
+				"error":"Terdapat masalah ketika memuat ulang perintah! ",
+				"not_command": "There is no command with name or alias ",
+				"succes":"Perintah {command} berhasil dimuat ulang!"
+			}
+		},
+		"general": {
+			"help": {
+				"commands_list": "Daftar keseluruhan perintah yang terdaftar",
+				"error":"Tidak dapat mengirimkan pesan pribadi ke user ini! Kemungkinan user tidak menyetujui permintaan pesan pribadi pada menu privasi atau bila masalah ini tidak dapat diselesaikan silahkan menghubungi pengembang!",
+				"fail": "Halo, sepertinya aku tidak dapat mengirimkanmu pesan!",
+				"help_description": "\n\nHalo selamat  siang, berikut ini keseluruhan perintah yang kuketahui. \nJika kamu butuh bantuan hubungiku dengan kontak ini!",
+				"spesific_commands": "Kamu dapat mengetik %shelp [nama perintah] untuk mendapatkan info tentang perintah tertentu!",
+				"succes": "Aku telah mengirimkan daftar perintah ke dalam pesan pribadi!"
+			}
+		}
+	},
+	"error_messages": {
+		"token_invalid": "Token tidak valid, mohon untuk melihatnya kembali di pengaturan. Butuh bantuan? chat Naiyzk#6994",
+		"uknown": "Sepertinya ada bug yang tidak terduga mohon hubungin developer!"
+	},
+	"events": {
+		"message_create": {
+			"developer_only": "Perintah ini hanya dapat digunakan oleh pengembang!",
+			"error_while_executing_the_command": "Ada kesalahan saat mencoba menjalankan perintah itu!",
+			"guild_only": "Saya hanya dapat menjalankan perintah ini di dalam guild!",
+			"incomplete_args": "Argumen yang diberikan kurang",
+			"no_permissions": "Kamu tidak memiliki akses ke perintah ini.",
+			"proper_usage": "Penggunaan yang tepat adalah",
+			"time_left": "detik sebelum menggunakan kembali",
+			"wait": "Mohon tunggu sebentar"
+		}
+	}
 }
