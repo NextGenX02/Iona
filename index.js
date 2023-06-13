@@ -20,7 +20,6 @@ const client = new Client({
 		GatewayIntentBits.DirectMessageReactions,
         GatewayIntentBits.DirectMessageTyping,
         GatewayIntentBits.DirectMessages,
-        GatewayIntentBits.GuildBans,
         GatewayIntentBits.GuildEmojisAndStickers,
         GatewayIntentBits.GuildIntegrations,
         GatewayIntentBits.GuildInvites,
@@ -41,6 +40,8 @@ i18n.configure({
     locales: ["en", "id"],
     defaultLocale: Language,
     directory: path.join(__dirname, "resources/text/lang"),
+    objectNotation: true,
+    autoReload: true
 })
 
 const eventFiles = fs.readdirSync("./events").filter((file) => file.endsWith(".js"))
@@ -69,4 +70,4 @@ for (const folder of commandFolders) {
 	}
 }
 
-client.login(Token).catch(() => console.log("((ERR)) " + i18n.__("token_invalid")))
+client.login(Token).catch(() => console.log("((ERR)) " + i18n.__("error_messages.token_invalid")))
