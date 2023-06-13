@@ -47,29 +47,29 @@ module.exports = {
 
 		if (!command) return
 
-		if (command.devOnly && message.author.id !== Developers) {
-			return message.reply({ content: i18n.__("dev_only") })
+		if (command.developerOnly && message.author.id !== Developers) {
+			return message.reply({ content: i18n.__("events.message_create.developer_only") })
 		}
 
 
 		if (command.guildOnly && message.channel.type === ChannelType.DM) {
 			return message.reply({
-				content: i18n.__("guild_only"),
+				content: i18n.__("events.message_create.guild_only"),
 			})
 		}
 
 		if (command.permissions && message.channel.type !== ChannelType.DM) {
 			const authorPerms = message.channel.permissionsFor(message.author)
 			if (!authorPerms || !authorPerms.has(command.permissions)) {
-				return message.reply({ content: i18n.__("no_permissions") })
+				return message.reply({ content: i18n.__("events.message_create.no_permissions") })
 			}
 		}
 
 		if (command.args && !args.length) {
-			let reply = `${i18n.__("incomplete_args")}, ${message.author}!`
+			let reply = `${i18n.__("events.message_create.incomplete_args")}, ${message.author}!`
 
 			if (command.usage) {
-				reply += `\n${i18n.__("proper_usage")}: \`${Prefix}${command.name} ${command.usage}\``
+				reply += `\n${i18n.__("events.message_create.proper_usage")}: \`${Prefix}${command.name} ${command.usage}\``
 			}
 
 			return message.channel.send({ content: reply })
@@ -80,7 +80,7 @@ module.exports = {
 		} catch (error) {
 			console.error(error)
 			message.reply({
-				content: i18n.__("error_message"),
+				content: i18n.__("events.message_create.error_while_executing_the_command"),
 			})
 		}
 	},
