@@ -1,16 +1,23 @@
 {
 	"commands": {
+		"admin": {
+			"delete_messages": {
+				"fail": "Gagal untuk menghapus {total} pesan, karena melebihi batas maksimum!",
+				"total_delete": "Berhasil menghapus {size} pesan!",
+				"uknown": "Sepertinya argumen yang diberikan bukanlah sebuah number?"
+			}
+		},
 		"developer": {
 			"reload": {
-				"error":"Terdapat masalah ketika memuat ulang perintah! ",
+				"error": "Terdapat masalah ketika memuat ulang perintah! ",
 				"not_command": "There is no command with name or alias ",
-				"succes":"Perintah {command} berhasil dimuat ulang!"
+				"succes": "Perintah `{command}` berhasil dimuat ulang!"
 			}
 		},
 		"general": {
 			"help": {
 				"commands_list": "Daftar keseluruhan perintah yang terdaftar",
-				"error":"Tidak dapat mengirimkan pesan pribadi ke user ini! Kemungkinan user tidak menyetujui permintaan pesan pribadi pada menu privasi atau bila masalah ini tidak dapat diselesaikan silahkan menghubungi pengembang!",
+				"error": "Tidak dapat mengirimkan pesan pribadi ke user ini! Kemungkinan user tidak menyetujui permintaan pesan pribadi pada menu privasi atau bila masalah ini tidak dapat diselesaikan silahkan menghubungi pengembang!",
 				"fail": "Halo, sepertinya aku tidak dapat mengirimkanmu pesan!",
 				"help_description": "\n\nHalo selamat  siang, berikut ini keseluruhan perintah yang kuketahui. \nJika kamu butuh bantuan hubungiku dengan kontak ini!",
 				"spesific_commands": "Kamu dapat mengetik %shelp [nama perintah] untuk mendapatkan info tentang perintah tertentu!",
