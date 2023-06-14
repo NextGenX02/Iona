@@ -2,7 +2,7 @@
  * @author NiazTy
  */
 
-const { Presences, Interval } = require("../resources/settings.json")
+const { Presences, Interval, Status } = require("../resources/settings.json")
 
 module.exports = {
     name: "ready",
@@ -16,7 +16,7 @@ module.exports = {
                     name: Presences[index].name,
                     type: Presences[index].type
                 }],
-                status: "dnd"
+                status: Status
             })
         }, Interval * 1000)
 
