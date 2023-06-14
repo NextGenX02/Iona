@@ -46,7 +46,8 @@ module.exports = {
 			return message.author
 				.send({ embeds: [
 					help
-				] })
+				] 
+			})
 
 				.then(() => {
 					if (message.guild === null) return 
@@ -106,9 +107,10 @@ module.exports = {
 				inline: true
 			})
 
-		message.channel.send({ 
-            embeds: [commandDetails] 
-        })
+		message.channel.send({ embeds: [
+			commandDetails
+		] 
+	})
 
     }
 }
