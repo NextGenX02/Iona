@@ -15,11 +15,9 @@ module.exports = {
 
 		const { client, guild, channel, content, author } = message
 
-		if (
-			message.content == `<@${client.user.id}>` ||
-			message.content == `<@!${client.user.id}>`
-		) {
-			require("../messages/onMention.js").execute(message)
+		if (message.content == `<@${client.user.id}>`) 
+		{ 
+			require("../messages/onMention.js").execute(message) 
 			return
 		}
 
@@ -69,7 +67,7 @@ module.exports = {
 			let reply = `${i18n.__("events.message_create.incomplete_args")}, ${message.author}!`
 
 			if (command.usage) {
-				reply += `\n${i18n.__("events.message_create.proper_usage")}: \`${Prefix}${command.name} ${command.usage}\``
+				reply += `\n> ${i18n.__("events.message_create.proper_usage")}: \`${Prefix}${command.name} ${command.usage}\``
 			}
 
 			return message.channel.send({ content: reply })
