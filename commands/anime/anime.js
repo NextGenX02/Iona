@@ -1,5 +1,6 @@
 
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, Component } = require("discord.js")
+const { Colors } = require("../../resources/settings.json")
 const { getInfoFromName } = require('mal-scraper')
 
 const i18n = require("i18n")
@@ -12,11 +13,11 @@ module.exports = {
 	developerOnly: false,
 	guildOnly: true,
     name: "anime",
-    usage: "<args> <args>",
+    usage: "<search | character> <args>",
 
     execute(message, args) {
 
-        let name = args[1].toLowerCase()
+        const name = `${args}`
 
         switch (args[0].toLowerCase()) {
             case "search":
@@ -32,7 +33,13 @@ module.exports = {
                         { name: "Source", value: data.source, inline: true },
                         { name: "Rating", value: data.rating, inline: true },
                     )
+                    .setColor(Colors.info)
                     .setDescription(`${data.synopsis}\n`)
+                    .setFooter({
+                        text: "Data from MAL | " + "Requested by " + message.author.username,
+                        iconURL: message.author.displayAvatarURL() 
+                    })
+                    .setTimestamp()
                     .setThumbnail(data.picture)
                     .setTitle( `${data.title} - ${data.type}`)
 
@@ -46,14 +53,22 @@ module.exports = {
                         ]
                     )
 
-                    message.channel.send({ embeds: [
-                        animeDetails
-                    ], components: [
-                        trailerRow
-                    ]
-                })
-                }).catch(err => console.log(err))
+                    message.channel.sendTyping().then(
+                        message.channel.send({ embeds: [
+                            animeDetails
+                        ], components: [
+                            trailerRow
+                        ]
+                    }))
 
+                }).catch((err) => {
+                    message.reply(i18n.__("commands.anime.search.error"))
+                })
+
+                break;
+
+            case "character":
+                message.reply("nezt update, bukan sekarang")
                 break;
         
             default:
