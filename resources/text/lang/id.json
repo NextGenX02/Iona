@@ -7,6 +7,14 @@
 				"uknown": "Sepertinya argumen yang diberikan bukanlah sebuah number?"
 			}
 		},
+		"anime": {
+			"manga": {
+				"error":"Judul manga tidak dapat ditemukan! mungkin coba dengan judul lain?"
+			},
+			"search": {
+				"error":"Judul anime tidak dapat ditemukan! mungkin coba dengan judul lain?"
+			}
+		},
 		"developer": {
 			"reload": {
 				"error": "Terdapat masalah ketika memuat ulang perintah! ",
@@ -15,13 +23,20 @@
 			}
 		},
 		"general": {
+			"avatar": {
+
+			},
 			"help": {
 				"commands_list": "Daftar keseluruhan perintah yang terdaftar",
 				"error": "Tidak dapat mengirimkan pesan pribadi ke user ini! Kemungkinan user tidak menyetujui permintaan pesan pribadi pada menu privasi atau bila masalah ini tidak dapat diselesaikan silahkan menghubungi pengembang!",
 				"fail": "Halo, sepertinya aku tidak dapat mengirimkanmu pesan!",
-				"help_description": "\n\nHalo selamat  siang, berikut ini keseluruhan perintah yang kuketahui. \nJika kamu butuh bantuan hubungiku dengan kontak ini!",
+				"help_description": "\n\nHalo selamat  siang, berikut ini keseluruhan perintah yang kuketahui. \n\nJika kamu butuh bantuan hubungiku dengan kontak ini!",
 				"spesific_commands": "Kamu dapat mengetik %shelp [nama perintah] untuk mendapatkan info tentang perintah tertentu!",
 				"succes": "Aku telah mengirimkan daftar perintah ke dalam pesan pribadi!"
+			},
+			"info": {
+				"introduction": "Hei {user}, perkenalkan aku Iona, asisten yang siap membantumu! \n\n> Pernah berpikir mengapa kreatorku memberi nama Iona padaku? Iona memiliki makna *the light of the moon* yang berarti cahaya dari rembulan. \nIngin mengetahui lebih details dariku, silahkan cek pesan embed dibawah ini!",
+				"":""
 			}
 		}
 	},
