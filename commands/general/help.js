@@ -1,11 +1,10 @@
 
 const { EmbedBuilder } = require("discord.js")
-const { Prefix } = require("../../resources/settings.json")
+const { Prefix, Colors } = require("../../resources/settings.json")
 const { readdirSync } = require("node:fs")
 
 
 const categories = readdirSync("./commands/")
-const colors = require("../../resources/settings.json").Colors
 const i18n = require("i18n")
 
 module.exports = {
@@ -27,7 +26,7 @@ module.exports = {
 				iconURL: message.client.user.displayAvatarURL(),
 				name: `Hello World! I'm ${message.client.user.username}!` 
 			})
-			.setColor(colors.normal)
+			.setColor(Colors.normal)
 			.setDescription(i18n.__("commands.general.help.help_description"))
 			.setFooter({
 				text: "Requested by " + message.author.username,
@@ -75,7 +74,7 @@ module.exports = {
 			iconURL: message.client.user.displayAvatarURL(),
 			name: `Hello World! I'm ${message.client.user.username}!` 
 		})
-		.setColor(colors.normal)
+		.setColor(Colors.normal)
 		.setDescription(`**${command.name}**\n${command.description}`)
 		.setFooter({
 			text: "Requested by " + message.author.username,
