@@ -1,6 +1,6 @@
 
 const { EmbedBuilder } = require("discord.js")
-const { Colors, Prefix } = require("../../resources/settings.json")
+const { Colors } = require("../../resources/settings.json")
 const { description, version } = require("../../package.json")
 
 const i18n = require("i18n")
@@ -49,7 +49,7 @@ module.exports = {
         message.channel.send({ embeds: [
             infoDetails
         ] 
-    }).catch(err => console.log("error pada addFields"))
+    }).catch(err => console.log(err))
 
     }
 }
