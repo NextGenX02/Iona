@@ -15,6 +15,7 @@
   "dependencies": {
     "discord.js": "^14.11.0",
     "i18n": "^0.15.1",
-    "mal-scraper": "^2.12.1"
+    "mal-scraper": "^2.12.1",
+    "moment": "^2.29.4"
   }
 }
