@@ -13,7 +13,7 @@ module.exports = {
 	developerOnly: false,
 	guildOnly: true,
     name: "info",
-    usage: "Test",
+    usage: "",
 
     execute(message) {
 
