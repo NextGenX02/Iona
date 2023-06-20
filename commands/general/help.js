@@ -15,7 +15,7 @@ module.exports = {
 	developerOnly: false,
 	guildOnly: true,
     name: "help",
-    usage: "",
+    usage: "[command]",
 
     execute(message, args) {
 		const { commands }  =  message.client
