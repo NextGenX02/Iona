@@ -9,6 +9,7 @@ module.exports = {
 	developerOnly: false,
 	guildOnly: true,
     name: "clear",
+    permissions: ["Administrator"],
     usage: "<numbers>",
 
     execute(message, args) {
