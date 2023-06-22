@@ -4,7 +4,8 @@
   "description": "\"Iona\" which means \"to sing beautifully\". It's a really lovely name with a great meaning behind it.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "discord-bot",
@@ -14,8 +15,15 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "erlpack": "github:discord/erlpack",
     "i18n": "^0.15.1",
     "mal-scraper": "^2.12.1",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.22",
+    "shoukaku": "^3.4.0",
+    "signale": "^1.4.0",
+    "utf-8-validate": "^6.0.3",
+    "zlib-sync": "^0.1.8"
   }
 }

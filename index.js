@@ -1,3 +1,11 @@
+// Get the config from .env files
+require('dotenv').config()
+require('./utils/log')
+const {initAndStart} = require('./utils/init')
+
+initAndStart().then()
+/*
+
 const { Client, Partials, Collection, GatewayIntentBits } = require("discord.js")
 const { Token, Language } = require("./resources/settings.json")
 
@@ -71,3 +79,5 @@ for (const folder of commandFolders) {
 }
 
 client.login(Token).catch(() => console.log("((ERR)) " + i18n.__("error_messages.token_invalid")))
+
+ */
